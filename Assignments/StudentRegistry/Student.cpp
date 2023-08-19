@@ -1,3 +1,4 @@
+#include <iomanip>
 #include <iostream>
 
 #include "Student.h"
@@ -84,7 +85,7 @@ float Student::getAverageGrade() const
 void Student::print() const
 {
     std::cout << "\n";
-    std::cout << " - ID:        " << id << "\n";
+    std::cout << " - ID:        " << std::setw(5) << std::setfill('0') << id << "\n";
     std::cout << " - Name:      " << name << "\n";
     std::cout << " - Grade P1:  " << grade[0] << "\n";
     std::cout << " - Grade P2:  " << grade[1] << "\n";
