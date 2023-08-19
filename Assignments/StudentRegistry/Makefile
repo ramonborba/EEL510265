@@ -1,2 +1,2 @@
 default:
-	g++ -Wall main.cpp Student.cpp StudentRegistry.cpp -o app
+	g++ -Wall main.cpp Student.cpp StudentRegistry.cpp -o StudentRegistry.app
