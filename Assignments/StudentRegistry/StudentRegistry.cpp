@@ -49,6 +49,7 @@ int StudentRegistry::addStudent()
         float grade2;
         cout << "----- New Student -----\n\n";
         cout << "Name: ";
+        cin.ignore();
         cin.getline(name, 50);
         cout << "Grade P1: ";
         cin >> grade1;
@@ -88,18 +89,23 @@ int StudentRegistry::addStudent(std::string name, float grade1, float grade2)
     return index;
 }
 
-int StudentRegistry::deleteStudent(unsigned int id)
+int StudentRegistry::deleteStudent()
 {
     int err = 0;
+
+    unsigned int id = requestId();
+
     Student* st = searchStudent(id);
     if (st)
     {
         st->setInvalid();
         entries--;
+        std::cout << "Student deleted successfully.\n";
     }
     else
     {
         err = -1;
+        std::cout << "Error: Student not found.\n";
     }
     return err;
 }
@@ -134,9 +140,7 @@ int StudentRegistry::updateStudent()
 
     int err = 0;
 
-    unsigned int id = -1;
-    cout << "Student ID: ";
-    cin >> id;
+    unsigned int id = requestId();
 
     Student* const st = searchStudent(id);
 
@@ -158,7 +162,7 @@ int StudentRegistry::updateStudent()
         st->setName(name);
         st->setGrade(grade1, 0);
         st->setGrade(grade2, 1);
-        cout << "Student updated succesfully.\n";
+        cout << "Student updated successfully.\n";
     }
     else
     {
@@ -188,9 +192,12 @@ int StudentRegistry::updateStudent(unsigned int id, std::string name, float grad
     return err;
 }
 
-int StudentRegistry::printStudent(unsigned int id) const
+int StudentRegistry::printStudent() const
 {
     int err = 0;
+
+    unsigned int id = requestId();
+
     const Student* const st = searchStudent(id);
     if (st)
     {
@@ -199,6 +206,7 @@ int StudentRegistry::printStudent(unsigned int id) const
     else
     {
         err = -1;
+        std::cout << "Error: Student not found.\n";
     }
     return err;
 }
@@ -222,4 +230,13 @@ void StudentRegistry::printRegistry() const
     cout << "---------------\n\n";
     cout << "----------------------------\n";
     cout << endl;
+}
+
+unsigned int StudentRegistry::requestId() const
+{
+    unsigned int id;
+    std::cout << "Student ID: ";
+    std::cin >> id;
+    std::cout << "\n";
+    return id;
 }

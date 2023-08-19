@@ -12,11 +12,10 @@ public:
     unsigned int getCapacity() const;
     int addStudent();
     int addStudent(std::string name, float grade1, float grade2);
-    int deleteStudent(unsigned int id);
-    const Student* const searchStudent(unsigned int id) const;
+    int deleteStudent();
     int updateStudent();
     int updateStudent(unsigned int id, std::string name, float grade1, float grade2);
-    int printStudent(unsigned int id) const;
+    int printStudent() const;
     void printRegistry() const;
 
 private:
@@ -25,5 +24,7 @@ private:
     unsigned int entries;
     unsigned int generateId();
     int findFreeSpot();
-    Student* const searchStudent(unsigned int id);
+    Student* const searchStudent(unsigned int id);;
+    const Student* const searchStudent(unsigned int id) const;
+    unsigned int requestId() const;
 };
