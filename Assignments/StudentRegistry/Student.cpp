@@ -3,15 +3,8 @@
 
 #include "Student.h"
 
-Student::Student()
+Student::Student() : grade { 0 }, id(0), name(""), valid(false)
 {
-    name = "";
-    id = 0;
-    for (int i = 0; i < N_GRADES; i++)
-    {
-        grade[i] = 0;
-    }
-    valid = false;
 }
 
 Student::~Student()

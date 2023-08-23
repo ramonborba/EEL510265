@@ -3,10 +3,8 @@
 
 #include "StudentRegistry.h"
 
-StudentRegistry::StudentRegistry(/* args */)
+StudentRegistry::StudentRegistry() : students() , numId(0), entries(0)
 {
-    numId = 0;
-    entries = 0;
 }
 
 StudentRegistry::~StudentRegistry()
