@@ -1,5 +1,12 @@
-#VS Code
+# VS Code
 *.vscode
+
+# Clangd
+.clangd
+.cache
+
+# LunarVim
+.lvim
 
 # Prerequisites
 *.d
