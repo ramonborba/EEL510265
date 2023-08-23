@@ -1,0 +1,41 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-Wall",
+      "-o",
+      "StudentRegistry.app",
+      "main.cpp"
+    ],
+    "directory": "/home/ramon/projects/EEL510265/Assignments/StudentRegistry",
+    "file": "/home/ramon/projects/EEL510265/Assignments/StudentRegistry/main.cpp",
+    "output": "/home/ramon/projects/EEL510265/Assignments/StudentRegistry/StudentRegistry.app"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-Wall",
+      "-o",
+      "StudentRegistry.app",
+      "Student.cpp"
+    ],
+    "directory": "/home/ramon/projects/EEL510265/Assignments/StudentRegistry",
+    "file": "/home/ramon/projects/EEL510265/Assignments/StudentRegistry/Student.cpp",
+    "output": "/home/ramon/projects/EEL510265/Assignments/StudentRegistry/StudentRegistry.app"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-Wall",
+      "-o",
+      "StudentRegistry.app",
+      "StudentRegistry.cpp"
+    ],
+    "directory": "/home/ramon/projects/EEL510265/Assignments/StudentRegistry",
+    "file": "/home/ramon/projects/EEL510265/Assignments/StudentRegistry/StudentRegistry.cpp",
+    "output": "/home/ramon/projects/EEL510265/Assignments/StudentRegistry/StudentRegistry.app"
+  }
+]
