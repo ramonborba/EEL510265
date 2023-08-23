@@ -18,7 +18,7 @@ int main(int argc, char const *argv[])
     {
         cout << "----- Student Registry System -----\n\n";
 
-        cout << "Available commands:\n";
+        cout << "Available commands:\n\n";
         cout << "   1 - Add student\n";
         cout << "   2 - Search student\n";
         cout << "   3 - Update student\n";
@@ -26,7 +26,6 @@ int main(int argc, char const *argv[])
         cout << "   5 - List registry\n\n";
         cout << "Command: ";
         cin >> command;
-        cout << endl;
 
         switch (command)
         {

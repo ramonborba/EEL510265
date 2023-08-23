@@ -23,7 +23,8 @@ public:
     void setInvalid();
 
     float getAverageGrade() const;
-    void print() const;
+    void printFull() const;
+    void printShort() const;
 private:
     float grade[N_GRADES];
     unsigned int id;

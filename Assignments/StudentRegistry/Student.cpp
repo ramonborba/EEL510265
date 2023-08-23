@@ -82,13 +82,20 @@ float Student::getAverageGrade() const
     return avg / N_GRADES;
 }
 
-void Student::print() const
+void Student::printFull() const
 {
-    std::cout << "\n";
+    // std::cout << "\n";
+    printShort();
+    std::cout << " - Avg Grade: " << getAverageGrade() << "\n";
+    // std::cout << std::endl;
+}
+
+void Student::printShort() const
+{
+    // std::cout << "\n";
     std::cout << " - ID:        " << std::setw(5) << std::setfill('0') << id << "\n";
     std::cout << " - Name:      " << name << "\n";
     std::cout << " - Grade P1:  " << grade[0] << "\n";
     std::cout << " - Grade P2:  " << grade[1] << "\n";
-    std::cout << " - Avg Grade: " << getAverageGrade() << "\n";
-    std::cout << std::endl;
+    // std::cout << std::endl;
 }
