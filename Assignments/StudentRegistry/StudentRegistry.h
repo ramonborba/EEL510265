@@ -16,8 +16,8 @@ public:
     int addStudent(std::string name, float grade1, float grade2);
 
     int deleteStudent();
-    int updateStudent();
 
+    int updateStudent();
     int updateStudent(unsigned int id, std::string name, float grade1, float grade2);
 
     int printStudent() const;

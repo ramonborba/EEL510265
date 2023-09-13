@@ -37,5 +37,18 @@
     "directory": "/home/ramon/projects/EEL510265/Assignments/StudentRegistry",
     "file": "/home/ramon/projects/EEL510265/Assignments/StudentRegistry/StudentRegistry.cpp",
     "output": "/home/ramon/projects/EEL510265/Assignments/StudentRegistry/StudentRegistry.app"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-Wall",
+      "-o",
+      "StudentRegistry.app",
+      "Course.cpp"
+    ],
+    "directory": "/home/ramon/projects/EEL510265/Assignments/StudentRegistry",
+    "file": "/home/ramon/projects/EEL510265/Assignments/StudentRegistry/Course.cpp",
+    "output": "/home/ramon/projects/EEL510265/Assignments/StudentRegistry/StudentRegistry.app"
   }
 ]
