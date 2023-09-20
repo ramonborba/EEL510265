@@ -4,6 +4,7 @@ template<typename T>
 class CShape3d {
 public:
     CShape3d(T a, T b, T c);
+    virtual ~CShape3d() = default;
 
     virtual T volume() = 0;
 

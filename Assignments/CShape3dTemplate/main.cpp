@@ -26,7 +26,7 @@
 #include "CCylinder.cpp"
 
 int main(){
-	CShape3d* shape;
+	CShape3d<float>* shape;
 
     using namespace std;
 
