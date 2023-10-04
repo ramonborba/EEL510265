@@ -2,17 +2,18 @@
 
 #include "VMStateMachine.hpp"
 #include "VMState.hpp"
+#include "../Oled/Oled.h"
 
 VMStateMachine::VMStateMachine() : currentState(nullptr) {}
 
 void VMStateMachine::start() {
-    // setState(/* S000 */);
+    currentState = &S000::getInstance();
 }
 
 void VMStateMachine::execute() {
     while (true) {
         currentState->execute(this);
-        // delay?
+        delay(1000000);
     }
 }
 
@@ -56,6 +57,10 @@ void VMStateMachine::deliverProduct(Product prod) {
             // print msg in OLED
             break;
     }
+}
+
+void VMStateMachine::returnChange( int amount ) {
+    std::cout << "Returning " << amount << "\n";
 }
 
 void VMStateMachine::noMoneyMsg() {
