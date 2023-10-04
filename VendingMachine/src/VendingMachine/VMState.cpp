@@ -10,23 +10,23 @@ void S000::enter( VMStateMachine* sm ) {
 void S000::execute( VMStateMachine* sm ) {
     VMStateMachine::Command cmd = sm->requestCmd();
     switch (cmd) {
-        case VMStateMachine::Command::M025:
+        case VMStateMachine::M025:
             sm->setState(S025::getInstance());
             break;
 
-        case VMStateMachine::Command::M050:
+        case VMStateMachine::M050:
             sm->setState(S050::getInstance());
             break;
 
-        case VMStateMachine::Command::M100:
+        case VMStateMachine::M100:
             sm->setState(S100::getInstance());
             break;
 
-        case VMStateMachine::Command::DEV:
+        case VMStateMachine::DEV:
             sm->returnChange(0);
             break;
 
-        case VMStateMachine::Command::BUY:
+        case VMStateMachine::BUY:
             sm->noMoneyMsg();
             break;
     }
@@ -44,24 +44,24 @@ void S025::enter( VMStateMachine* sm ) {
 void S025::execute( VMStateMachine* sm ) {
     VMStateMachine::Command cmd = sm->requestCmd();
     switch (cmd) {
-        case VMStateMachine::Command::M025:
+        case VMStateMachine::M025:
             sm->setState(S050::getInstance());
             break;
 
-        case VMStateMachine::Command::M050:
+        case VMStateMachine::M050:
             sm->setState(S075::getInstance());
             break;
 
-        case VMStateMachine::Command::M100:
+        case VMStateMachine::M100:
             sm->setState(S125::getInstance());
             break;
 
-        case VMStateMachine::Command::DEV:
+        case VMStateMachine::DEV:
             sm->returnChange(25);
             sm->setState(S000::getInstance());
             break;
 
-        case VMStateMachine::Command::BUY:
+        case VMStateMachine::BUY:
             sm->noMoneyMsg();
             break;
     }
@@ -79,24 +79,24 @@ void S050::enter( VMStateMachine* sm ) {
 void S050::execute( VMStateMachine* sm ) {
     VMStateMachine::Command cmd = sm->requestCmd();
     switch (cmd) {
-        case VMStateMachine::Command::M025:
+        case VMStateMachine::M025:
             sm->setState(S075::getInstance());
             break;
 
-        case VMStateMachine::Command::M050:
+        case VMStateMachine::M050:
             sm->setState(S100::getInstance());
             break;
 
-        case VMStateMachine::Command::M100:
+        case VMStateMachine::M100:
             sm->setState(S150::getInstance());
             break;
 
-        case VMStateMachine::Command::DEV:
+        case VMStateMachine::DEV:
             sm->returnChange(50);
             sm->setState(S000::getInstance());
             break;
 
-        case VMStateMachine::Command::BUY:
+        case VMStateMachine::BUY:
             sm->noMoneyMsg();
             break;
     }
@@ -113,25 +113,25 @@ void S075::enter( VMStateMachine* sm ) {
 void S075::execute( VMStateMachine* sm ) {
     VMStateMachine::Command cmd = sm->requestCmd();
     switch (cmd) {
-        case VMStateMachine::Command::M025:
+        case VMStateMachine::M025:
             sm->setState(S100::getInstance());
             break;
 
-        case VMStateMachine::Command::M050:
+        case VMStateMachine::M050:
             sm->setState(S125::getInstance());
             break;
 
-        case VMStateMachine::Command::M100:
+        case VMStateMachine::M100:
             sm->returnChange(25);
             sm->setState(S150::getInstance());
             break;
 
-        case VMStateMachine::Command::DEV:
+        case VMStateMachine::DEV:
             sm->returnChange(75);
             sm->setState(S000::getInstance());
             break;
 
-        case VMStateMachine::Command::BUY:
+        case VMStateMachine::BUY:
             sm->noMoneyMsg();
             break;
     }
@@ -149,25 +149,25 @@ void S100::enter( VMStateMachine* sm ) {
 void S100::execute( VMStateMachine* sm ) {
     VMStateMachine::Command cmd = sm->requestCmd();
     switch (cmd) {
-        case VMStateMachine::Command::M025:
+        case VMStateMachine::M025:
             sm->setState(S125::getInstance());
             break;
 
-        case VMStateMachine::Command::M050:
+        case VMStateMachine::M050:
             sm->setState(S150::getInstance());
             break;
 
-        case VMStateMachine::Command::M100:
+        case VMStateMachine::M100:
             sm->returnChange(50);
             sm->setState(S150::getInstance());
             break;
 
-        case VMStateMachine::Command::DEV:
+        case VMStateMachine::DEV:
             sm->returnChange(100);
             sm->setState(S000::getInstance());
             break;
 
-        case VMStateMachine::Command::BUY:
+        case VMStateMachine::BUY:
             sm->noMoneyMsg();
             break;
     }
@@ -185,26 +185,26 @@ void S125::enter( VMStateMachine* sm ) {
 void S125::execute( VMStateMachine* sm ) {
     VMStateMachine::Command cmd = sm->requestCmd();
     switch (cmd) {
-        case VMStateMachine::Command::M025:
+        case VMStateMachine::M025:
             sm->setState(S150::getInstance());
             break;
 
-        case VMStateMachine::Command::M050:
+        case VMStateMachine::M050:
             sm->returnChange(25);
             sm->setState(S150::getInstance());
             break;
 
-        case VMStateMachine::Command::M100:
+        case VMStateMachine::M100:
             sm->returnChange(75);
             sm->setState(S150::getInstance());
             break;
 
-        case VMStateMachine::Command::DEV:
+        case VMStateMachine::DEV:
             sm->returnChange(125);
             sm->setState(S000::getInstance());
             break;
 
-        case VMStateMachine::Command::BUY:
+        case VMStateMachine::BUY:
             sm->noMoneyMsg();
             break;
     }
@@ -222,24 +222,24 @@ void S150::enter( VMStateMachine* sm ) {
 void S150::execute( VMStateMachine* sm ) {
     VMStateMachine::Command cmd = sm->requestCmd();
     switch (cmd) {
-        case VMStateMachine::Command::M025:
+        case VMStateMachine::M025:
             sm->returnChange(25);
             break;
 
-        case VMStateMachine::Command::M050:
+        case VMStateMachine::M050:
             sm->returnChange(50);
             break;
 
-        case VMStateMachine::Command::M100:
+        case VMStateMachine::M100:
             sm->returnChange(100);
             break;
 
-        case VMStateMachine::Command::DEV:
+        case VMStateMachine::DEV:
             sm->returnChange(150);
             sm->setState(S000::getInstance());
             break;
 
-        case VMStateMachine::Command::BUY:
+        case VMStateMachine::BUY:
             VMStateMachine::Product prod = sm->requestProduct();
             sm->deliverProduct(prod);
             sm->setState(S000::getInstance());

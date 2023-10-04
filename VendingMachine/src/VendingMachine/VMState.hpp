@@ -25,7 +25,7 @@ public:
     };
 
 private:
-    S000() = default;
+    S000() {};
     S000( const S000& );
     S000& operator= ( const S000& );
 };
@@ -42,7 +42,7 @@ public:
     };
 
 private:
-    S025() = default;
+    S025() {};
     S025( const S025& );
     S025& operator= ( const S025& );
 };
@@ -59,7 +59,7 @@ public:
     };
 
 private:
-    S050() = default;
+    S050() {};
     S050( const S050& );
     S050& operator= ( const S050& );
 };
@@ -76,7 +76,7 @@ public:
     };
 
 private:
-    S075() = default;
+    S075() {};
     S075( const S075& );
     S075& operator= ( const S075& );
 };
@@ -93,7 +93,7 @@ public:
     };
 
 private:
-    S100() = default;
+    S100() {};
     S100( const S100& );
     S100& operator= ( const S100& );
 };
@@ -110,7 +110,7 @@ public:
     };
 
 private:
-    S125() = default;
+    S125() {};
     S125( const S125& );
     S125& operator= ( const S125& );
 };
@@ -127,7 +127,7 @@ public:
     };
 
 private:
-    S150() = default;
+    S150() {};
     S150( const S150& );
     S150& operator= ( const S150& );
 };

@@ -1,6 +1,6 @@
 #include "VendingMachine/VMStateMachine.hpp"
 
-int main () {
+int main (void) {
     VMStateMachine vm;
     vm.start();
     vm.execute();

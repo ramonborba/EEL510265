@@ -7,7 +7,7 @@ class VMStateMachine {
 public:
     VMStateMachine();
 
-    enum class Command {
+    enum Command {
         M025,
         M050,
         M100,
@@ -15,7 +15,7 @@ public:
         BUY,
     };
 
-    enum class Product {
+    enum Product {
         MEET,
         ETIRPS,
     };
