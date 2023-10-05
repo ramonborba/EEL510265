@@ -2,7 +2,9 @@
 
 #include "VMStateMachine.hpp"
 #include "VMState.hpp"
-#include "../Oled/Oled.h"
+
+#include "../Keyboard/Keyboard.hpp"
+#include "../Utils/Utils.hpp"
 
 VMStateMachine::VMStateMachine() : currentState(&S000::getInstance()) {}
 
@@ -25,36 +27,29 @@ void VMStateMachine::setState(VMState& nextState) {
 
 enum VMStateMachine::Command VMStateMachine::requestCmd() {
     std::cout << "Requesting cmd...\n";
-    volatile unsigned int *data = (volatile unsigned int *)0x80000a00;
-    volatile unsigned int *direction = (volatile unsigned int *)0x80000a08;
-    *direction = 0xffffffff;
-
     // print msg in OLED
     Command cmd = M025;
+
     // read inputs
-    unsigned int input = 0;
-    while (input == 0) {
-        input = (*data >> 16) & (0b11111);
-        delay(200000);
-    }
-    switch (input) {
-        case 0b00001:
+    enum Keyboard::Key key = Keyboard::getInstance().waitKeyPress();
+    switch (key) {
+        case Keyboard::BTNU:
             cmd = BUY;
             break;
         
-        case 0b00010:
+        case Keyboard::BTNL:
             cmd = M025;
             break;
         
-        case 0b00100:
+        case Keyboard::BTND:
             cmd = DEV;
             break;
         
-        case 0b01000:
+        case Keyboard::BTNR:
             cmd = M100;
             break;
         
-        case 0b10000:
+        case Keyboard::BTNC:
             cmd = M050;
             break;
         
@@ -71,17 +66,13 @@ enum VMStateMachine::Product VMStateMachine::requestProduct() {
     volatile unsigned int *data = (volatile unsigned int *)0x80000a00;
     std::cout << "Requesting product...\n";
     // print msg in OLED
-    unsigned int input = 0;
-    while (input == 0) {
-        input = (*data >> 16) & (0b11111);
-        delay(200000);
-    }
     Product prod = MEET;
-    switch (input) {
-        case 0b00001:
+    Keyboard::Key key = Keyboard::getInstance().waitKeyPress();
+    switch (key) {
+        case Keyboard::BTNL:
             prod = MEET;   
             break;
-        case 0b00100:
+        case Keyboard::BTNR:
             prod = ETIRPS;
             break;
         default:
