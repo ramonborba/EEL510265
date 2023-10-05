@@ -1,4 +1,5 @@
 #include "Oled.h"
+#include "../Utils/Utils.hpp"
 
 using namespace std;
 
@@ -138,12 +139,6 @@ int characters[] = {
 	0x00, 0x18, 0x08, 0x08, 0x10, 0x10, 0x18, 0x00,		// 0x7E, ~
 	0xAA, 0x55, 0xAA, 0x55, 0xAA, 0x55, 0xAA, 0x55		// 0x7F, DEL
 };
-
-void delay(clock_t time) {
-	clock_t start_time = clock();
-	clock_t end_time = time + start_time;
-	while (clock() != end_time);
-}
 
 void setPin(int pin, int value) {
 	switch (pin) {

@@ -13,8 +13,6 @@
 #define VBATC 30 //pin 9
 #define VDDC 31 //pin 10
 
-/* Generate a delay of time us */ 
-void delay(clock_t time);
 /* Set a pin */
 void setPin(int pin, int value);
 /* Send a command through the SPI */
